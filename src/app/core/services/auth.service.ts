@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) { }
+  constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
   async register(email: string, password: string) {
     try {
       const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      const token = await userCredential.user?.getIdToken();
+      if (token) {
+        localStorage.setItem('authToken', token);
+      }
       return userCredential;
     } catch (error) {
       console.error("Error during registration: ", error);
@@ -22,6 +26,10 @@ export class AuthService {
   async login(email: string, password: string) {
     try {
       const userCredential = await this.afAuth.signInWithEmailAndPassword(email, password);
+      const token = await userCredential.user?.getIdToken();
+      if (token) {
+        localStorage.setItem('authToken', token);
+      }
       return userCredential;
     } catch (error) {
       console.error("Error during login: ", error);
@@ -31,7 +39,12 @@ export class AuthService {
 
   logout() {
     this.afAuth.signOut().then(() => {
+      localStorage.removeItem('authToken');
       this.router.navigate(['/login']);
     });
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('authToken');
   }
 }
