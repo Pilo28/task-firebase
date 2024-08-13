@@ -1,1 +1,16 @@
 <app-header></app-header>
+
+<div class="dashboard-container">
+
+    <h1>Dashboard</h1>
+
+    <app-task-form (taskAdded)="onTaskAdded($event)"></app-task-form>
+  
+    <app-task-list
+      [tasks]="tasks" 
+      (taskUpdated)="onTaskUpdated($event)"
+      (taskDeleted)="onTaskDeleted($event)">
+    </app-task-list>
+
+</div>
+  

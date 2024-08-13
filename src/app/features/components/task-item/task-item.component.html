@@ -1,0 +1,10 @@
+<div class="task-item">
+    <h3>{{ task.title }}</h3>
+    <p *ngIf="task.description">{{ task.description }}</p>
+    <p>Fecha de vencimiento: {{ task.dueDate | date }}</p>
+    <p>Estado: {{ task.completed ? 'Completada' : 'Pendiente' }}</p>
+  
+    <button (click)="onEdit()">Editar</button>
+    <button (click)="onDelete()">Eliminar</button>
+</div>
+  

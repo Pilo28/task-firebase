@@ -1,0 +1,9 @@
+<div class="task-form">
+    <form (ngSubmit)="onSubmit()" [formGroup]="taskForm">
+      <input formControlName="title" placeholder="Título de la tarea" />
+      <textarea formControlName="description" placeholder="Descripción"></textarea>
+      <input formControlName="dueDate" type="date" placeholder="Fecha de vencimiento" />
+      <button type="submit" [disabled]="taskForm.invalid">Guardar Tarea</button>
+    </form>
+</div>
+  
