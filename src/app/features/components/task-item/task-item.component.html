@@ -4,7 +4,9 @@
     <p>Fecha de vencimiento: {{ task.dueDate | date }}</p>
     <p>Estado: {{ task.completed ? 'Completada' : 'Pendiente' }}</p>
   
-    <button (click)="onEdit()">Editar</button>
+    <button (click)="onToggleCompleted()">
+        {{ task.completed ? 'Marcar como Pendiente' : 'Marcar como Completada' }}
+    </button>
     <button (click)="onDelete()">Eliminar</button>
 </div>
   

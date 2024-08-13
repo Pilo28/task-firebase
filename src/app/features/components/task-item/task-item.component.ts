@@ -11,12 +11,12 @@ export class TaskItemComponent {
   @Output() updateTask = new EventEmitter<Task>();
   @Output() deleteTask = new EventEmitter<string>();
 
-  onEdit() {
+  onToggleCompleted() {
     const updatedTask: Task = {
       ...this.task,
       completed: !this.task.completed 
     };
-    this.updateTask.emit(updatedTask);
+    this.updateTask.emit(updatedTask); 
   }
 
   onDelete() {
