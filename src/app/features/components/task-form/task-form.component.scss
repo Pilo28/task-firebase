@@ -1,0 +1,39 @@
+@import '../../../../styles/_variables';
+@import '../../../../styles/_mixins';
+
+.task-form {
+  background-color: lighten($background-color, 10%);
+  padding: $padding-base;
+  border-radius: $border-radius-base;
+  margin-bottom: $margin-base;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+      margin-bottom: $margin-base;
+      padding: 0.5rem;
+      border: 1px solid lighten($primary-color, 40%);
+      border-radius: $border-radius-base;
+      font-size: $font-size-base;
+      font-family: $font-family-base;
+    }
+
+    button {
+      @include button-styles(#fff, $secondary-color);
+      align-self: flex-end;
+    }
+  }
+
+  @include respond-to(sm) {
+    form {
+      input,
+      textarea {
+        font-size: $font-size-small;
+      }
+    }
+  }
+}

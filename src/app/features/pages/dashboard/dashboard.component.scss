@@ -1,0 +1,20 @@
+@import '../../../../styles/_variables';
+@import '../../../../styles/_mixins';
+
+.dashboard-container {
+  padding: $padding-base;
+  background-color: #fff;
+  border-radius: $border-radius-base;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+
+  h1 {
+    color: $primary-color;
+    @include font-large;
+    margin-bottom: $margin-base;
+  }
+
+  @include respond-to(md) {
+    padding: 0.5rem;
+  }
+}
