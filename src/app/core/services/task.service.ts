@@ -1,31 +1,33 @@
+import { Task } from './../models/interfaces/task.model';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Observable, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  private tasksCollection: any;
+  private tasksCollection: AngularFirestoreCollection<Task>;
 
   constructor(private firestore: AngularFirestore) {
-    this.tasksCollection = this.firestore.collection('tasks');
+    this.tasksCollection = this.firestore.collection<Task>('tasks');
   }
 
-  getTasks(): Observable<any[]> {
-    return this.tasksCollection.valueChanges({ idField: 'id' });
+  getTasks(): Observable<Task[]> {
+    return this.tasksCollection.valueChanges({ idField: 'id' }); 
   }
 
-  addTask(task: any): Promise<any> {
-    return this.tasksCollection.add(task);
+  addTask(task: Task): Observable<void> {
+    const taskToAdd = { ...task }; 
+    return from(this.tasksCollection.add(taskToAdd).then(() => {}));
   }
 
-  updateTask(id: string, task: any): Promise<void> {
-    return this.tasksCollection.doc(id).update(task);
+  updateTask(id: string, task: Task): Observable<void> {
+    return from(this.tasksCollection.doc(id).update(task));
   }
 
-  deleteTask(id: string): Promise<void> {
-    return this.tasksCollection.doc(id).delete();
+  deleteTask(id: string): Observable<void> {
+    return from(this.tasksCollection.doc(id).delete());
   }
 }

@@ -40,7 +40,7 @@ export class AuthService {
   logout() {
     this.afAuth.signOut().then(() => {
       localStorage.removeItem('authToken');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/auth/login']);
     });
   }
 
