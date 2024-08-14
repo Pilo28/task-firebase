@@ -8,9 +8,9 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { errorHandlingInterceptor } from './core/interceptors/error-handling-interceptor.interceptor';
 import { loggingInterceptor } from './core/interceptors/logging-interceptor.interceptor';
 import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FirebaseConfigService } from './core/services/firebase-config.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig), 
+    AngularFireModule.initializeApp(new FirebaseConfigService().getFirebaseConfig()), 
     AngularFireAuthModule, 
     AngularFirestoreModule 
   ],

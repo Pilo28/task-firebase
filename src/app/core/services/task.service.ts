@@ -10,7 +10,7 @@ export interface Task {
   description?: string;
   completed: boolean;
   dueDate?: Date;
-  userId: string; // Añadimos userId para asociar la tarea al usuario
+  userId: string; 
 }
 
 @Injectable({
@@ -21,7 +21,7 @@ export class TaskService {
   private firestore = inject(AngularFirestore); 
   private authService = inject(AuthService); 
 
-  // Obtener las tareas del usuario autenticado
+
   getTasks(): Observable<Task[]> {
     return this.authService.getUserId().pipe(
       switchMap(userId => {
@@ -33,25 +33,25 @@ export class TaskService {
     );
   }
 
-  // Añadir una nueva tarea para el usuario autenticado
+
   addTask(task: Task): Observable<void> {
     return this.authService.getUserId().pipe(
       switchMap(userId => {
         if (!userId) {
           throw new Error("User is not authenticated");
         }
-        const taskToAdd = { ...task, userId }; // Asociar la tarea al userId
+        const taskToAdd = { ...task, userId }; 
         return from(this.firestore.collection('tasks').add(taskToAdd).then(() => {}));
       })
     );
   }
 
-  // Actualizar una tarea existente
+  
   updateTask(id: string, task: Task): Observable<void> {
     return from(this.firestore.collection('tasks').doc(id).update(task));
   }
 
-  // Eliminar una tarea
+  
   deleteTask(id: string): Observable<void> {
     return from(this.firestore.collection('tasks').doc(id).delete());
   }

@@ -1,13 +1,5 @@
 export const environment = {
     production: false,
-    firebaseConfig: {
-        apiKey: "AIzaSyA7Ozu7e3xUMyzN46SsZfocSea5hs54QFk",
-        authDomain: "task-firebase-fdd0b.firebaseapp.com",
-        projectId: "task-firebase-fdd0b",
-        storageBucket: "task-firebase-fdd0b.appspot.com",
-        messagingSenderId: "87922201259",
-        appId: "1:87922201259:web:22862b79a2a82e3df39dee",
-        measurementId: "G-KT8DTL90Y5"
-    }
-  };
+    encryptedFirebaseConfig: "U2FsdGVkX19BKZ89kbVusnM33DCid3u9T3VyACpauYk5Z6rAI/SAvb6G1WTQNCKUacrrbTmRPMftToQEkOFolXAYRWMtJQ7ZfEzPDxuWScKOxVy5Cah/o+lndZJxSHWk1S8Do7MAxSxXJgkV0sNAvxxrJe1pyR9HZvVZkDi3hEHFWalsyvH1yLyxwNjXPPf1XfMTW4CJlKYkEOYib+R/zaaDkYTKU8yWv1PlGooMEUOrw4iJv1wfD1MyivceixK1xuj8fDfxT7gzz/ua7f9Y+34jct0/B1E2UbMZY47rE0jcSbWoSwsiC02zO1/aEYgpD7PCe6nzNI6iJlRq2KBbD1V5aSGMSCuvO2mlanaDUyinONgF0volyX5gKg5Xd81uAgroEinZp4WxKP5vA27E8q//lYYfChvaZwlhx9HZaPU=",
+};
   
