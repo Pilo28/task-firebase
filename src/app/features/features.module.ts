@@ -8,6 +8,7 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FeaturesRoutingModule,
     ReactiveFormsModule,
+    TranslateModule,
     SharedModule
 ]
 })

@@ -1,12 +1,11 @@
 <div class="task-item">
     <h3>{{ task.title }}</h3>
     <p *ngIf="task.description">{{ task.description }}</p>
-    <p>Fecha de vencimiento: {{ task.dueDate | date }}</p>
-    <p>Estado: {{ task.completed ? 'Completada' : 'Pendiente' }}</p>
+    <p>{{ 'dueDate' | translate }}: {{ task.dueDate | date }}</p>
+    <p>{{ 'status' | translate }}: {{ task.completed ? ('completed' | translate) : ('pending' | translate) }}</p>
   
     <button (click)="onToggleCompleted()">
-        {{ task.completed ? 'Marcar como Pendiente' : 'Marcar como Completada' }}
+        {{ task.completed ? ('markAsPending' | translate) : ('markAsCompleted' | translate) }}
     </button>
-    <button (click)="onDelete()">Eliminar</button>
+    <button (click)="onDelete()">{{ 'delete' | translate }}</button>
 </div>
-  

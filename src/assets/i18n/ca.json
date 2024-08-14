@@ -1,0 +1,15 @@
+{
+  "taskTitle": "títol de la tasca",
+  "taskDescription": "descripció",
+  "dueDate": "data de venciment",
+  "status": "estat",
+  "completed": "completada",
+  "pending": "pendent",
+  "markAsCompleted": "marcar com a completada",
+  "markAsPending": "marcar com a pendent",
+  "delete": "eliminar",
+  "addTask": "afegir tasca",
+  "title": "benvingut a les teves notes",
+  "logOut": "tancar sessió",
+  "addTasks": "afegeix tasques a realitzar"
+}
