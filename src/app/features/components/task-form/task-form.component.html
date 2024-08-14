@@ -1,8 +1,8 @@
 <div class="task-form">
   <form (ngSubmit)="onSubmit()" [formGroup]="taskForm">
-    <input formControlName="title" placeholder="{{ 'taskTitle' | translate }}" />
-    <textarea formControlName="description" placeholder="{{ 'taskDescription' | translate }}"></textarea>
-    <input formControlName="dueDate" type="date" placeholder="{{ 'dueDate' | translate }}" />
-    <button type="submit" [disabled]="taskForm.invalid">{{ 'addTask' | translate }}</button>
+    <input formControlName="title" placeholder="{{ 'taskTitle' | translate | capitalize }}" />
+    <textarea formControlName="description" placeholder="{{ 'taskDescription' | translate | capitalize }}"></textarea>
+    <input formControlName="dueDate" type="date" placeholder="{{ 'dueDate' | translate | capitalize }}" />
+    <button type="submit" [disabled]="taskForm.invalid">{{ 'addTask' | translate | titlecase }}</button>
   </form>
 </div>

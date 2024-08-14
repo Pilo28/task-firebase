@@ -1,5 +1,5 @@
 <header class="header-container">
-    <h1>{{ 'title' | translate }}</h1>
+    <h1>{{ 'title' | translate | capitalize}}</h1>
   
     <div class="flags">
       <img src="assets/flags/en-flag.png" alt="English" (click)="changeLanguage('en')" />
@@ -8,7 +8,7 @@
     </div>
     
     <nav>
-      <button (click)="logout()">{{ 'logOut' | translate }}</button>
+      <button (click)="logout()">{{ 'logOut' | translate | titlecase }}</button>
     </nav>
 </header>
   
