@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable, from } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
@@ -18,7 +18,8 @@ export interface Task {
 })
 export class TaskService {
 
-  constructor(private firestore: AngularFirestore, private authService: AuthService) {}
+  private firestore = inject(AngularFirestore); 
+  private authService = inject(AuthService); 
 
   // Obtener las tareas del usuario autenticado
   getTasks(): Observable<Task[]> {

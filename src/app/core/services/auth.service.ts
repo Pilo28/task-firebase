@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Observable, from } from 'rxjs';
@@ -11,7 +11,8 @@ import { AuthUser } from '../models/interfaces/auth-user.model';
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  private afAuth = inject(AngularFireAuth);
+  private router = inject(Router);
 
   register(email: string, password: string): Observable<AuthUser> {
     return from(this.afAuth.createUserWithEmailAndPassword(email, password)).pipe(

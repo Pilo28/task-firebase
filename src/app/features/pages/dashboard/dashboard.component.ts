@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { TaskService } from './../../../core/services/task.service';
 import { Task } from './../../../core/models/interfaces/task.model';
@@ -13,7 +13,7 @@ export class DashboardComponent {
 
   tasks: Task[] = [];
 
-  constructor(private taskService: TaskService) {}
+  private taskService = inject(TaskService); 
 
   ngOnInit(): void {
     this.loadTasks();
