@@ -25,12 +25,13 @@ export class RegisterComponent {
   onRegister() {
     if (this.registerForm.valid) {
       const { email, password } = this.registerForm.value;
-      this.authService.register(email, password)
-        .then(() => this.router.navigate(['/tasks']))
-        .catch(error => {
+      this.authService.register(email, password).subscribe({
+        next: () => this.router.navigate(['/tasks']),
+        error: (error) => {
           console.error('Error during registration:', error);
           alert('Error al registrarse. Intenta nuevamente.');
-        });
+        }
+      });
     }
   }
 }

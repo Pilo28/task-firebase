@@ -25,12 +25,13 @@ export class LoginComponent {
   onLogin() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.login(email, password)
-        .then(() => this.router.navigate(['/dashboard']))
-        .catch(error => {
+      this.authService.login(email, password).subscribe({
+        next: () => this.router.navigate(['/dashboard']),
+        error: (error) => {
           console.error('Error during login:', error);
           alert('Error al iniciar sesión. Verifica tus credenciales.');
-        });
+        }
+      });
     }
   }
 }
