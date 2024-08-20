@@ -1,0 +1,15 @@
+{
+  "taskTitle": "titulo de la tarea",
+  "taskDescription": "descripcion",
+  "dueDate": "fecha de vencimiento",
+  "status": "estado",
+  "completed": "completada",
+  "pending": "pendiente",
+  "markAsCompleted": "marcar como completada",
+  "markAsPending": "marcar como pendiente",
+  "delete": "eliminar",
+  "addTask": "añadir tarea",
+  "title": "bienvenido a tus notas",
+  "logOut": "cerrar sesión",
+   "addTasks": "añade tareas a realizar"
+}

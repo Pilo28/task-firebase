@@ -1,0 +1,43 @@
+@mixin font-large {
+    font-size: $font-size-large;
+  }
+  
+  @mixin font-small {
+    font-size: $font-size-small;
+  }
+  
+  @mixin button-styles($color, $bg-color) {
+    color: $color;
+    background-color: $bg-color;
+    border: none;
+    padding: $padding-base;
+    border-radius: $border-radius-base;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken($bg-color, 10%);
+    }
+  }
+
+  @mixin center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  @mixin respond-to($breakpoint) {
+    @if $breakpoint == sm {
+      @media (max-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == md {
+      @media (max-width: $breakpoint-md) { @content; }
+    } @else if $breakpoint == lg {
+      @media (max-width: $breakpoint-lg) { @content; }
+    } @else if $breakpoint == xl {
+      @media (max-width: $breakpoint-xl) { @content; }
+    }
+  }
+  

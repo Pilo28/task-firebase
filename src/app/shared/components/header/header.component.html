@@ -1,0 +1,14 @@
+<header class="header-container">
+    <h1>{{ 'title' | translate | capitalize}}</h1>
+  
+    <div class="flags">
+      <img src="assets/flags/en-flag.png" alt="English" (click)="changeLanguage('en')" />
+      <img src="assets/flags/es-flag.png" alt="Español" (click)="changeLanguage('es')" />
+      <img src="assets/flags/ca-flag.png" alt="Català" (click)="changeLanguage('ca')" />
+    </div>
+    
+    <nav>
+      <button (click)="logout()">{{ 'logOut' | translate | titlecase }}</button>
+    </nav>
+</header>
+  

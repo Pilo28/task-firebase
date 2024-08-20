@@ -1,0 +1,46 @@
+@import '../../../../styles/_variables';
+@import '../../../../styles/_mixins';
+
+.task-item {
+  background-color: $background-color;
+  padding: $padding-base;
+  margin-bottom: $margin-base;
+  border-radius: $border-radius-base;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+    @include font-large;
+  }
+
+  p {
+    color: $text-color;
+    margin-bottom: 0.5rem;
+
+    &.completed {
+      text-decoration: line-through;
+      color: lighten($text-color, 20%);
+    }
+  }
+
+  button {
+    margin-right: 0.5rem;
+    @include font-small;
+  }
+
+  .btn-complete {
+    @include button-styles(#fff, $primary-color);
+  }
+
+  .btn-delete {
+    @include button-styles(#fff, $danger-color);
+  }
+
+  @include respond-to(md) {
+    padding: 0.5rem;
+    h3 {
+      @include font-small;
+    }
+  }
+}

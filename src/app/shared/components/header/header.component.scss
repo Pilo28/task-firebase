@@ -1,0 +1,45 @@
+@import '../../../../styles/_variables';
+@import '../../../../styles/_mixins';
+
+.header-container {
+  width: 100%;
+  background-color: $background-color;
+  padding: 1rem 0;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // Alinea el contenido entre los extremos
+
+  h1 {
+    flex-grow: 1; // Permite que el título ocupe el espacio disponible
+    text-align: left; // Alinea el título a la izquierda
+    margin: 0; // Elimina los márgenes por defecto
+  }
+
+  .flags {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    img {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0; // Elimina el margen derecho de la última bandera
+      }
+    }
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-end; 
+
+    button {
+      @include button-styles(#fff, $secondary-color);
+      align-self: center;
+    }
+  }
+}

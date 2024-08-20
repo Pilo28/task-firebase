@@ -1,0 +1,15 @@
+{
+  "taskTitle": "task title",
+  "taskDescription": "description",
+  "dueDate": "due date",
+  "status": "status",
+  "completed": "completed",
+  "pending": "pending",
+  "markAsCompleted": "mark as completed",
+  "markAsPending": "mark as pending",
+  "delete": "delete",
+  "addTask": "add task",
+  "title": "welcome to your notes",
+  "logOut": "log out",
+  "addTasks": "add tasks to do"
+}

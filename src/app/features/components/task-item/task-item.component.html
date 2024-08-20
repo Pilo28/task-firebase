@@ -1,0 +1,11 @@
+<div class="task-item">
+    <h3>{{ task.title | capitalize }}</h3>
+    <p *ngIf="task.description">{{ task.description }}</p>
+    <p>{{ 'dueDate' | translate | capitalize }}: {{ task.dueDate | date }}</p>
+    <p>{{ 'status' | translate | capitalize }}: {{ task.completed ? ('completed' | translate | capitalize) : ('pending' | translate | capitalize) }}</p>
+  
+    <button (click)="onToggleCompleted()">
+        {{ task.completed ? ('markAsPending' | translate | capitalize) : ('markAsCompleted' | translate | capitalize) }}
+    </button>
+    <button (click)="onDelete()">{{ 'delete' | translate | capitalize }}</button>
+</div>
